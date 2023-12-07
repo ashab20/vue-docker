@@ -16,4 +16,6 @@ services:
     image: alpine/git
     volumes:
       - ./:/git-repo
-    command: ["clone", "${APP_REPO}", "/git-repo"]
+
+    command: ["pull"]
+

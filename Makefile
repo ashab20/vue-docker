@@ -1,4 +1,4 @@
-.PHONY: build run stop sell
+.PHONY: build run stop gitbash bash
 
 build:
 	docker build -t vuejs-cookbook/dockerize-vuejs-app .
@@ -9,6 +9,9 @@ dev:
 	docker-compose up -d
 stop:
 	docker-compose down
-git:
-	docker exec -it git-container sh
+gitbash:
+	docker exec -it sh
+bash:
+	docker exec -it vue-docker_git-container_1 sh
+
 
