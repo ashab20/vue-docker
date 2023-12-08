@@ -13,7 +13,7 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 ```
 docker compose up -d
-docker exec -it my_frontend /bin/bash
+docker exec -it vue-app /bin/bash
 ```
 or
 
