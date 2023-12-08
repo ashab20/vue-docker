@@ -5,7 +5,15 @@ services:
     image: node:lts
     working_dir: /var/www/html/app/
     ports:
-      - "8000:8000"  # This line maps the container's port 8000 to the host's port 8000
+      - "8000:8000"
     volumes:
       - ./vue-app:/var/www/html/app
     command: ["npm", "run", "dev"]
+
+  git-container:
+    container_name: git-container
+    image: bitnami/git
+    volumes:
+      - ./vue-app:/git-repo
+    # command: ["sh", "-c", "cd /git-repo && git clone <your-repo-url> ."]  # Replace <your-repo-url> with your actual Git repository URL
+
