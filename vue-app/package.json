@@ -1,15 +1,14 @@
 {
-  "name": "vue-docker",
+  "name": "vue-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "vite --host",
+    "build": "vite build --host",
+    "preview": "vite preview --host"
   },
   "dependencies": {
-    "axios": "^1.6.2",
     "vue": "^3.3.8"
   },
   "devDependencies": {

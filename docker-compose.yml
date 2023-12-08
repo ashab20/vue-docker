@@ -1,21 +1,11 @@
-version: '3'
-
+version: "3.4"
 services:
-  vue-docker-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  vue-app:
+    container_name: vue-app
+    image: node:lts
+    working_dir: /var/www/html/app/
     ports:
-      - "5173:8080"
+      - "8000:8000"  # This line maps the container's port 8000 to the host's port 8000
     volumes:
-      - ./src:/app/src
-    environment:
-      - NODE_ENV=development
-
-  git-container:
-    image: alpine/git
-    volumes:
-      - ./:/git-repo
-
-    command: ["pull"]
-
+      - ./vue-app:/var/www/html/app
+    command: ["npm", "run", "dev"]
